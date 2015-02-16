@@ -43,6 +43,17 @@
         this._defaults = defaults;
         this._name = pluginName;
 
+        // list the words for different functions
+        prepositions = ['à','devant','passé','après','devers','pendant','attendu','Dixit','pico-','au-dedans','durant','pour','au-dehors','emmi','près','au-delà de','en','proto-','au-dessous de','endéans','quant à','au-dessus de','entre','revoici','au-devant de','envers','revoilà','auprès de','ès','rez','autour de','excepté','sans','aux environs de','fors','sauf','avant','hormis','selon','avec','hors','sous','centi-','juridique nonobstant','sub','chez','jusque','suivant','concernant','lès','sur','contre','lez','vers','d\'','malgré','versus','dans','moyennant','via','de','nonobstant','vis-à-vis','depuis','outre','voici','derrière','par','voilà','des','parmi'],
+        pronoms = ['je', 'tu', 'il', 'elle', 'on', 'nous', 'vous', 'ils', 'elles'];
+        pronomsToniques = ['moi', 'toi', 'lui', 'elle', 'nous', 'soi', 'vous', 'eux'];
+        pronomsRelatifsIndefinis = ['qui', 'que', 'quoi', 'dont', 'où'];
+        articlesPronominaux = ['se'];
+        conjonctions = ['mais','ou', 'et', 'donc', 'or', 'ni', 'car'];
+        articles = ['le', 'la', 'les', 'un', 'une', 'du', 'de la', 'des', 'au', 'aux'];
+        deterDemons = ['ce', 'cet', 'cette', 'ces'];
+        deterPoss = ['mon', 'ton', 'son', 'ma', 'ta', 'sa', 'mes', 'tes', 'ses', 'notre', 'votre', 'leur', 'nos', 'vos', 'leurs'];
+
         this.init();
     }
 
@@ -55,12 +66,17 @@
             // and this.options
             // you can add more functions like the one below and
             // call them like so: this.yourOtherFunction(this.element, this.options).
+            var self = this;
+            var p = $(this.element).find("p");
+            
+            p.each(function(){
+                self.fixSmallWords($(this));
+            });
 
-            console.log(this.element);
         },
 
-        yourOtherFunction: function(el, options) {
-            // some logic
+        fixSmallWords: function(el) {
+            el
         }
     };
 

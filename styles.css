@@ -1,5 +1,13 @@
+.clearfix{
+	clear: both;
+}
 body{
-	max-width: 600px;
-	margin: 0 auto;
-	font-size: 22px;
+	margin: 30px auto;
+	font-size: 16px;
+	width: 980px;
+}
+article{
+	float: left;
+	width: 450px;
+	padding: 0 20px;
 }
